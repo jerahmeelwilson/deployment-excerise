@@ -1,0 +1,12 @@
+* {
+  text-align: center;
+}
+img {
+  width: 300px;
+  height: 300px;
+}
+button {
+  background-color: rgb(134, 190, 134);
+  border-radius: 10px;
+  border: 1px solid black;
+}
