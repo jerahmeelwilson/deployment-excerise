@@ -39,6 +39,16 @@ app.get("/addUser", (req, res) => {
   }
 });
 
+app.get("/findUser", (req, res) => {
+  let user = "John";
+  if (users.includes("John")) {
+    res.send("user Found");
+  } else {
+    rollbar.critical("User not found");
+    res.send("User not found");
+  }
+});
+
 app.get("/styles", (req, res) => {
   res.sendFile(path.join(__dirname, "../styles.css"));
 });
