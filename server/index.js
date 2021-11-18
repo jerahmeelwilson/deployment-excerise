@@ -28,7 +28,7 @@ app.get("/users", (req, res) => {
   }
 });
 
-app.put("addUser", (req, res) => {
+app.get("addUser", (req, res) => {
   let name = "Jerahmeel";
   if (users.includes(name)) {
     res.send("user already exist");
