@@ -28,6 +28,17 @@ app.get("/users", (req, res) => {
   }
 });
 
+app.put("/addUser", (req, res) => {
+  let name = "Jerahmeel";
+  if (users.includes(name)) {
+    res.send("user already exist");
+    rollbar.warning("User already exist.");
+  } else {
+    users.push(name);
+    res.send("user added");
+  }
+});
+
 app.get("/styles", (req, res) => {
   res.sendFile(path.join(__dirname, "../styles.css"));
 });
