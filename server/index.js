@@ -20,10 +20,11 @@ let users = ["Jerahmeel, Jack"];
 
 app.get("/users", (req, res) => {
   try {
-    getUsers();
+    res.send(getUsers());
   } catch (error) {
     let ERROR = error;
-    Rollbar.error(ERROR);
+    rollbar.error(ERROR);
+    res.send("Error");
   }
 });
 
