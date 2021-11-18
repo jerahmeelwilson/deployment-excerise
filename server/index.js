@@ -16,6 +16,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
+let users = ["Jerahmeel, Jack"];
+
+app.get("/users", (req, res) => {
+  try {
+    getUsers();
+  } catch (error) {
+    let ERROR = error;
+    Rollbar.error(ERROR);
+  }
+});
+
 app.get("/styles", (req, res) => {
   res.sendFile(path.join(__dirname, "../styles.css"));
 });
