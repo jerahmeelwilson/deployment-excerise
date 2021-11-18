@@ -23,7 +23,7 @@ app.get("/users", (req, res) => {
     res.send(getUsers());
   } catch (error) {
     let ERROR = error;
-    rollbar.error(ERROR);
+    Rollbar.error(ERROR);
     res.send("Error");
   }
 });
